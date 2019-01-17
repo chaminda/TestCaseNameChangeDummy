@@ -11,7 +11,7 @@ import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 
 /**
- * Unit test for simple App.
+ * Scenario Tests for Scenario01_SubScenario1.1.1 with DataProvider
  */
 public class TestAPIDD implements ITest
 {
@@ -31,11 +31,17 @@ public class TestAPIDD implements ITest
     public Object[][] dataProvider() {
         return new Object[][] { { "multiResourceAPI", "publisher1" }, { "malformedAPI", "publisher2" }, { "wsdlAPI","admin" } };
     }
-    
-	/**public TestAPIDD(){
-		
-	}**/
 	
+	/**
+	 * Constructor for the class TestAPIDD
+	 */
+	public TestAPIDD() {
+		
+	}
+	
+	/**
+	 * Login Test
+	 */
 	@Test(description="1.1.1.1")
     public void testLogin()
     {
@@ -53,14 +59,18 @@ public class TestAPIDD implements ITest
     }
     
     @BeforeMethod(alwaysRun = true)
-    public void testData(Method method) {
+    public void changeTestCaseName(Method method) {
 		testInstanceName = method.getAnnotation(Test.class).description() + "_" + method.getName() +"_"+ apiName;
     }
     
     private void helperMethod() {
     	System.out.println("TEST HELPER");
     }
-
+    
+    /**
+     * Implementation of the getTestName in org.testng.ITest Interface.
+     * This will set the name for the test case in TEST-TestSuite.xml
+     */
 	public String getTestName() {
 		return testInstanceName;
 	}
