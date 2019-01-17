@@ -1,7 +1,7 @@
 # README
 
-## TEST-TestSuite.xml test name customization on runtime
-
+## TestNG Test case name customization during runtime 
+**Note: Changes will be appeared in TEST-TestSuite.xml**
 ### 1. Append description to the test case name
 Requirement: User wants to customize testcase name as using own @Test attributes
 
@@ -37,9 +37,9 @@ Results:
 
 You can find the complete source from [HERE](https://github.com/chaminda/TestCaseNameChangeDummy/blob/master/src/test/java/com/stldummy/testname/TestAPI.java).
 
-### 2. Append dataprovider values to the test case name
+### 2. Append DataProvider values to the test case name
 
-Requirement: When some tests are run with Dataprovider, in the report, same test method name will be appeared multiple times on all the values of DataProvider.
+Requirement: When some tests are run with DataProvider, in the report, same test method name will be appeared multiple times on all the values of DataProvider.
 So user wants to differentiate each test instances in the results(EST-TestSuite.xml). 
 
 Methodology:
